@@ -2,8 +2,8 @@ kind: Pod
 spec:
   containers:
   - name: hadolint
-    image: hadolint/hadolint:v1.17.2-20-ge2f77c5
+    image: lcorbocb/hadolint:v1.17.2
     imagePullPolicy: Always
     command:
-    - cat
+    - /busybox/cat
     tty: true
