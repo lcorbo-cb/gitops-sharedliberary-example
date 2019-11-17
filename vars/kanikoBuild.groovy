@@ -26,8 +26,8 @@ def call() {
   """
     ) {
     node(POD_LABEL) {
+      checkout scm
       container('kaniko') {
-        scm
         sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --cache=true --destination=lcorbocb/my-third-repo'
       }
     }
