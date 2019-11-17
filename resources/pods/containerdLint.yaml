@@ -2,8 +2,8 @@ kind: Pod
 spec:
   containers:
   - name: hadolint
-    image: hadolint/hadolint
+    image: hadolint/hadolint:latest-debian
     imagePullPolicy: Always
     command:
-    - echo
+    - cat
     tty: true
