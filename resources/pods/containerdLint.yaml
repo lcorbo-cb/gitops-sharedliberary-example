@@ -5,5 +5,5 @@ spec:
     image: busybox
     imagePullPolicy: Always
     command:
-    - /busybox/cat
+    - /cat
     tty: true
