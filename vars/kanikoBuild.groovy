@@ -2,7 +2,7 @@
 
 def call() {
   def pod_def = libraryResource 'pods/kanikoBuild.yaml'
-  podTemplate(yaml: pod_def ) {
+  podTemplate(yaml: "${libraryResource 'pods/kanikoBuild.yaml'}" ) {
     node(POD_LABEL) {
       checkout scm
       container('kaniko') {
