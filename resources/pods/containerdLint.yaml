@@ -2,7 +2,7 @@ kind: Pod
 spec:
   containers:
   - name: hadolint
-    image: hadolint/hadolint
+    image: hadolint/hadolint:v1.17.2-20-ge2f77c5-debian
     imagePullPolicy: Always
     command:
     - /busybox/cat
