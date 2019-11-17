@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
 def call() {
-
-  podTemplate(yaml: def request = libraryResource 'pods/kanikoBuild.yaml') {
+  def pod_def = libraryResource 'pods/kanikoBuild.yaml'
+  podTemplate(yaml: pod_def ) {
     node(POD_LABEL) {
       checkout scm
       container('kaniko') {
