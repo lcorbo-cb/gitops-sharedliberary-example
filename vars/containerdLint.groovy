@@ -5,7 +5,7 @@ def call() {
     node(POD_LABEL) {
       checkout scm
       container('hadolint') {
-        sh "hadolint ${dockerFile}"
+        sh "hadolint `pwd`/Dockerfile"
       }
     }
   }
