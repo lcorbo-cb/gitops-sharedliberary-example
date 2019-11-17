@@ -5,7 +5,7 @@ def call(container) {
     node(POD_LABEL) {
       checkout scm
       container('dgoss') {
-        sh "dgoss"
+        sh "ls -l"
       }
     }
   }
