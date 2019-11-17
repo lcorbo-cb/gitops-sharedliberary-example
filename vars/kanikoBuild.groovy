@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def call() {
-  podTemplate(yaml: libraryResource 'pods/kanikoBuild.yaml'
+  podTemplate(yaml: "libraryResource 'pods/kanikoBuild.yaml'"
     ) {
     node(POD_LABEL) {
       checkout scm
