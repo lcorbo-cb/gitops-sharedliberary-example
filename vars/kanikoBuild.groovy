@@ -6,7 +6,7 @@ def call() {
   spec:
     containers:
     - name: kaniko
-      image: gcr.io/kaniko-project/executor:debug-539ddefcae3fd6b411a95982a830d987f4214251
+      image: gcr.io/kaniko-project/executor:debug
       imagePullPolicy: Always
       command:
       - /busybox/cat
@@ -30,7 +30,7 @@ def call() {
       stage('Build with Kaniko') {
         git 'https://github.com/jenkinsci/docker-jnlp-slave.git'
         container('kaniko') {
-          sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=mydockerregistry:5000/myorg/myimage'
+          sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --cache=true --destination=lcorbocb/my-second-repo'
         }
       }
     }
