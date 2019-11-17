@@ -25,13 +25,10 @@ def call() {
                 path: config.json
   """
     ) {
-
     node(POD_LABEL) {
-      stage('Build with Kaniko') {
-        git 'https://github.com/jenkinsci/docker-jnlp-slave.git'
-        container('kaniko') {
-          sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --cache=true --destination=lcorbocb/my-second-repo'
-        }
+      scm
+      container('kaniko') {
+        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --cache=true --destination=lcorbocb/my-third-repo'
       }
     }
   }
