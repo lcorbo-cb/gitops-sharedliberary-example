@@ -5,5 +5,5 @@ spec:
     image: hadolint/hadolint
     imagePullPolicy: Always
     command:
-    - cat
+    - echo
     tty: true
