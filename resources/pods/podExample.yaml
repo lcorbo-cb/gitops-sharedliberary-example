@@ -1,8 +1,8 @@
 kind: Pod
 spec:
   containers:
-  - name: dgoss
-    image: kiwicom/dgoss
+  - name: hadolint
+    image: lcorbocb/hadolint:demo
     imagePullPolicy: Always
     command:
     - cat
