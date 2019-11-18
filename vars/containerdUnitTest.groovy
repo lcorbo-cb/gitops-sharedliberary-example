@@ -5,7 +5,7 @@ def call(containerTested) {
     node(POD_LABEL) {
       checkout scm
       container(containerTested) {
-        sh "./unitTests"
+        sh "./unitTests.sh"
       }
     }
   }
